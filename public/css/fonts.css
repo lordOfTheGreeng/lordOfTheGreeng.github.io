@@ -1,0 +1,28 @@
+@font-face {
+	font-family: "EFNMacStyle8px";
+	src: url("../fonts/EFNMacStyle8px/EFNMacStyle8px.woff") format("woff"),
+	url("../fonts/EFNMacStyle8px/EFNMacStyle8px.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Headliner No. 45(ENG + RUS)";
+	src: url("../fonts/Headliner No. 45(ENG + RUS)/Headliner No. 45(ENG + RUS).otf") format("opentype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "tellarite-regular";
+	src: url("../fonts/another/tellarite-regular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "xenois-regular";
+	src: url("../fonts/another/xenois-regular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
