@@ -201,47 +201,46 @@
 		position: absolute;
 		background: #ff0095;
 		box-shadow: 0 0 5px 1px rgba(255, 0, 170, .7);
-		transition: all ease 1s;
 	}
 		.third-section .bleak[data-number="1"]{
-			top: 42.79382579933848vh;
+			top: 52.79382579933848vh;
 			left: 23.80952380952381vw;
 			width: 5.9523809523809526vw;
 			height: 0.5820286659316428vh;
 		}
 		.third-section .bleak[data-number="2"]{
-			top: 44.10143329658214vh;
+			top: 54.10143329658214vh;
 			left: 11.904761904761905vw;
 			width: 14.88095238095238vw;
 			height: 4.410143329658213vh;
 		}
 		.third-section .bleak[data-number="3"]{
-			top: 49.61411245865491vh;
+			top: 59.61411245865491vh;
 			left: 22.023809523809522vw;
 			width: 10.714285714285714vw;
 			height: 1.1025358324145533vh;
 		}
 		.third-section .bleak[data-number="4"]{
-			top: 60.28004410143329vh;
-			left: 32.738095238095234vw;
+			top: 70.28004410143329vh;
+			left: 22.738095238095234vw;
 			width: 2.9761904761904763vw;
 			height: 0.5512679162072767vh;
 		}
 		.third-section .bleak[data-number="5"]{
-			top: 64.58765159867696vh;
-			left: 44.64285714285714vw;
+			top: 74.58765159867696vh;
+			left: 14.64285714285714vw;
 			width: 17.857142857142858vw;
 			height: 1.1025358324145533vh;
 		}
 		.third-section .bleak[data-number="6"]{
-			top: 66.89525909592061vh;
-			left: 33.33333333333333vw;
+			top: 76.89525909592061vh;
+			left: 23.33333333333333vw;
 			width: 17.857142857142858vw;
 			height: 3.3076074972436604vh;
 		}
 		.third-section .bleak[data-number="7"]{
-			top: 72.51047409040794vh;
-			left: 26.785714285714285vw;
+			top: 82.51047409040794vh;
+			left: 16.785714285714285vw;
 			width: 11.904761904761905vw;
 			height: 0.8820286659316428vh;
 		}
@@ -261,7 +260,7 @@
 			width: 30px;
 		}
 			.character-section .menu-side ul{
-				padding: 1vh 0;
+				padding: 3vh 0;
 				width: inherit;
 			}
 				.character-section .menu-side ul li{
@@ -301,7 +300,7 @@
 		.character-block{
 			position: absolute;
 			width: 35.714285714285715vw;
-			max-height: 70vw;
+			max-height: 40vw;
 			right: 0;
 			border-radius: 10px;
 			padding: 1.1025358324145533vh 1.1904761904761905vw;
@@ -312,7 +311,7 @@
 				margin-bottom: 2.2050716648291067vh;
 			}
 			.character-block p{
-				font-size: 2vw;
+				font-size: 3vw;
 			}
 .error{
 	position: absolute;
@@ -388,7 +387,7 @@
 				width: 70%;
 			}
 			.news-block p{
-				font-size: 3.5vw;
+				font-size: 4vw;
 			}
 	footer{
 		box-sizing: border-box;
