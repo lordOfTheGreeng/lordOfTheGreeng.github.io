@@ -1,121 +1,47 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+.btn{
+	text-transform: uppercase;
+	font-family: "Arial Black", Gadget, sans-serif;
+	cursor: pointer;
+	transition: all ease .1s;
+}
+.btn-style-1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--second-color);
+	color: var(--main-color);
+	width: 230px;
+	height: 50px;
+}
+	.btn-style-1:hover{
+		background: var(--third-color);
+	}
+.btn-style-2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--second-color);
+	color: var(--second-color);
+	width: 230px;
+	height: 50px;
+}
+	.btn-style-2:hover{
+		color: var(--third-color);
+		border-color: var(--third-color);
+	}
 
-*
-{
-    margin: 0;
-    padding: 0;
-}
-body
-{
-    background: black;
-}
-a
-{
-    text-decoration: none;
-}
-ul
-{
-    list-style-type: none;
-}
-img
-{
-    width: 100%;
-}
-.flex-start
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
 
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap row;
-        flex-flow: wrap row;
+.window-style-1 h3{
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: var(--second-color);
+	margin-bottom: 15px;
 }
-.flex-center
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.window-style-1 p{
+	color: var(--third-color);
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 50px;
 
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap row;
-        flex-flow: wrap row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-.flex-center-center
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap row;
-        flex-flow: wrap row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.flex-space-between
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap row;
-        flex-flow: wrap row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-.flex-column-start
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap column;
-        flex-flow: wrap column;
-}
-.flex-column-center
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap column;
-        flex-flow: wrap column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.flex-column-center-center
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: wrap column;
-        flex-flow: wrap column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+	font-family: "OfficinaSerifBookC";
+	text-align: justify;
 }
