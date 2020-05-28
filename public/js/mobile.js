@@ -442,20 +442,4 @@ window.onload = function(){
 	// включаем функцию
 	particleMoves();
 
-
-	// отслиживаем координаты мыши при зажатии клавиши мыши.
-	canvas.onmousedown = function(event){
-		if(event.button == 0){
-			document.body.onmousemove = function(event){
-				mousex = window.event.clientX;
-				mousey = window.event.clientY;
-			};
-			document.body.onmouseup = function(){
-				document.body.onmousemove = null;
-			};
-		};
-	};
-
-
-
 }
