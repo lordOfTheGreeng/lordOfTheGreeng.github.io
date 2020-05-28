@@ -57,7 +57,7 @@ var HTMLContentStorage = {
 			  + "<div class='worker-page-img harry-potter-img'><img src='public/img/worker/4.jpg'></div>"
 			  + "<div class='info-side'>"
 			  + "<div><p><span class='worker-info-title'>ФИО:</span>Гарри Поттер</p></div>"
-			  + "<div><p><span class='worker-info-title'>Род деятельности:</span>Автоманитолы</p></div>"
+			  + "<div><p><span class='worker-info-title'>Род деятельности:</span>Автомагнитолы</p></div>"
 			  + "<div><p><span class='worker-info-title'>Стаж работы:</span>20 лет</p></div>"
 			  + "<div><p><span class='worker-info-title'>Моб. телефон:</span><span class='phone'>8(800)-555-35-35</span></p></div>"
 			  + "</div></div>",
@@ -68,6 +68,130 @@ var HTMLContentStorage = {
 
 
 	"mapContainer" : "<div class='yandex-map' id='map'></div>",
+
+
+
+
+
+
+	"priceList" : "<header>"
+				+ "<ul>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory1'>Планшеты</li>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory2'>телефоны</li>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory3'>звуковые центры</li>"
+				+ "</ul>"
+				+ "<ul>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory4'>Компьютеры</li>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory5'>ноутбуки</li>"
+				+ "</ul>"
+				+ "<ul>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory6'>Спутниковые приставки</li>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory7'>электронные приставки</li>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory8'>антены</li>"
+				+ "</ul>"
+				+ "<ul>"
+				+ "<li class='btn btn-style-2' data-child='priceListCategory9'>Автомагнитолы</li>"
+				+ "</ul>"
+				+ "</header>",
+
+	"priceListCategory1" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>Планшеты</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>1200 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>900 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>600 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>2000 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory2" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>телефоны</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>1500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>1100 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>600 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>2300 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory3" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>звуковые центры</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>600 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>800 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory4" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>Персональные компьютеры</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>300 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>1100 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory5" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>ноутбуки</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>300 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>1100 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory6" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>спутниковые приставки</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>300 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>1100 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory7" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>электронные приставки</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>300 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>1100 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory8" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>антены</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>300 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>1100 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
+	"priceListCategory9" : "<div class='price-list-category-wrapper'>"
+						 + "<ul>"
+						 + "<li><h3>автомангитолы</h3></li>"
+						 + "<li><h3>первоначальная диагностика:</h3><p>БЕСПЛАТНО</p></li>"
+						 + "<li><h3>Чистка:</h3><p>500 рублей</p></li>"
+						 + "<li><h3>полная диагностика:</h3><p>300 рублей</p></li>"
+						 + "<li><h3>Переустановка системы:</h3><p>400 рублей</p></li>"
+						 + "<li><h3>Починка:</h3><p>1100 рублей(+покупка новых частей пк за счет клиента)</p></li>"
+						 + "</ul>"
+						 + "</div>",
+
 
 
 

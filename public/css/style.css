@@ -1,7 +1,7 @@
 :root{
 	--main-color: #10131d;
-	--second-color: rgb(243, 172, 124);
-	--third-color: rgb(210, 210, 210);
+	--second-color: rgb(153, 64, 51);
+	--third-color: rgb(210, 210, 210); 
 	--main-font-family: "Arial Black", Gadget, sans-serif;;
 	--second-font-family: "OfficinaSerifBookC";
 	--third-font-family: "Palatino Linotype Italic";
@@ -261,6 +261,27 @@ width: 5px;
 	height: 100%;
 }
 
+
+
+#priceList header li{
+	width: auto;
+	padding: 0 10px;
+	list-style-type: none;
+}
+/*price list spawned pages*/
+.price-list-category-wrapper li{
+	margin-bottom: 20px;
+	display: flex;
+}
+.price-list-category-wrapper h3, .price-list-category-wrapper p{
+	margin-bottom: 0;
+}
+.price-list-category-wrapper h3{
+	margin-right: 10px;
+}
+	.price-list-category-wrapper li:first-child h3{
+		font-size: 30px;
+	}
 
 .trust-window{
 	width: 30vw;

@@ -1,9 +1,6 @@
 class NewWindow{
 
 	constructor(settings){
-		this.width = settings.width,
-		this.height = settings.height,
-
 		this.xPos = settings.xPos,
 		this.yPos = settings.yPos,
 		this.focus = 0,
@@ -20,7 +17,7 @@ class NewWindow{
 	windowCreate(){
 		let objHTML = "<div class='" + this.class + "' id='" + this.id + "'></div>",
 			objMoveField = "<div class='window-move-field'></div>",
-			objCloserHTML = "<div class='standart-window-closer-block'><p class='standart-window-closer'>X</p></div>";
+			objCloserHTML = "<div class='standart-window-closer-block unselected'><p class='standart-window-closer'>X</p></div>";
 
 		document.getElementById(this.parentId).insertAdjacentHTML("beforeEnd", objHTML);
 		document.getElementById(this.id).insertAdjacentHTML("beforeEnd", objMoveField);
@@ -34,16 +31,10 @@ class NewWindow{
 			objMoveField = document.querySelector("#" + this.id + "> .window-move-field"),
 			objCloser = document.querySelector("#" + this.id + "> .standart-window-closer-block");
 
-		this.windowSize(obj);
 		this.windowPosition(obj);
 		this.windowFocus(obj);
 		this.windowContent(obj);
 		this.windowFunctional(obj, objMoveField, objCloser);
-	}
-
-	windowSize(obj){
-		obj.style.width = this.width;
-		obj.style.height = this.height;
 	}
 
 	windowPosition(obj){
@@ -111,6 +102,11 @@ class HTMLContent{
 		this.contentActivation(obj);
 	}
 
+	contentActivation(obj){}
+}
+
+class PagesContent extends HTMLContent{
+
 	contentActivation(obj){
 
 		let btns = document.querySelectorAll("#" + obj.id + " .btn");
@@ -118,6 +114,7 @@ class HTMLContent{
 		if(btns.length){
 
 			btns.forEach(function(item){
+
 				let data = item.dataset.child;
 
 				item.addEventListener("click", function(){
@@ -125,9 +122,7 @@ class HTMLContent{
 					if(!document.getElementById(data)){
 
 						let objWindow = new NewWindow({
-										"width" : '',
-										"height": '',
-										"xPos": (clientW/2),
+										"xPos": clientW/2.5,
 										"yPos": 50,
 										"class": "standart-window second-layer-window window-style-1",
 										"id": data,
@@ -136,30 +131,16 @@ class HTMLContent{
 									 });
 
 						objWindow.windowCreate();
-
 					};
-
 				});
 			});
 		};
-
 	}
-
 }
 
+class YaMapContent extends HTMLContent{
 
-
-class YaMapContent{
-
-	contentCreation(obj){
-		let HTML = HTMLContentStorage[obj.id];
-		
-		document.getElementById(obj.id).insertAdjacentHTML("beforeEnd", HTML);
-
-		this.mapFunctional();
-	}
-
-	mapFunctional(){
+	contentActivation(obj){
 
 		ymaps.ready(init);
  
@@ -185,22 +166,12 @@ class YaMapContent{
 
 }
 
-
-class SettingsContent{
-
-	contentCreation(obj){
-		let HTML = HTMLContentStorage[obj.id];
-
-		document.getElementById(obj.id).insertAdjacentHTML("beforeEnd", HTML);
-
-		this.contentActivation(obj);
-	}
+class SettingsContent extends HTMLContent{
 
 	contentActivation(obj){
 
-		let colorBtns = document.querySelectorAll("#" + obj.id + " .color-changer");
-
-		let particleBtn = document.querySelector("#" + obj.id + " #particleOffBtn");
+		let colorBtns = document.querySelectorAll("#" + obj.id + " .color-changer"),
+			particleBtn = document.querySelector("#" + obj.id + " #particleOffBtn");
 
 		if(colorBtns.length){
 
@@ -214,22 +185,17 @@ class SettingsContent{
 
 					cssColorVarStorage.style.setProperty(data, this.value);
 
-					if(data == "--second-color"){
+					if(data == "--second-color") particle.forEach(item => item.color = this.value);
 
-						particle.forEach(item => item.color = this.value);
-
-					};
 				});
 			});
 		};
 
 
 		if(particleBtn){
-			if(particleOn == true){
-				particleBtn.innerText = "вкл";
-			} else{
-				particleBtn.innerText = "выкл";
-			}
+
+			if(particleOn == true) particleBtn.innerText = "вкл";
+				else particleBtn.innerText = "выкл";
 
 			particleBtn.addEventListener('click', function(){
 
@@ -242,11 +208,15 @@ class SettingsContent{
 					particleBtn.innerText = "вкл";
 				}
 
-			})
+			});
 
-		}
+		};
+
+
 	}
 }
+
+
 
 
 
@@ -254,11 +224,12 @@ class SettingsContent{
 class Particles{
 
 	constructor(){
-		this.color = "rgb(243, 172, 124)";
+		this.color = "rgb(153, 64, 51)";
+		this.width = Math.floor(Math.random() * (4 - 1) + 1);
+		this.height = Math.floor(Math.random() * (4 - 1) + 1);
+
 		this.xPos = Math.floor(Math.random() * (clientW - 1) + 1);
 		this.yPos = Math.floor(Math.random() * (clientH - 1) + 1);
-		this.width = Math.floor(Math.random() * (4 - 1) + 1);;
-		this.height = Math.floor(Math.random() * (4 - 1) + 1);
 		this.speed = Math.floor(Math.random() * (3 - 1) + 1);
 	}
 
@@ -355,22 +326,18 @@ const dotsCount = 200;
 
 
 
-
-
 window.onload = function(){
 
 	document.getElementById("aboutUsBtn").onclick = function(){
 		if(!document.getElementById("aboutUs")){
 
 			let aboutUsWindow = new NewWindow({
-									"width" : '',
-									"height": '',
 									"xPos": 200,
 									"yPos": 50,
 									"class": "standart-window window-style-1 about-us-window",
 									"id": "aboutUs",
 									"parentId": "contentContainer",
-									"objContent" : new HTMLContent
+									"objContent" : new PagesContent
 								 });
 
 			aboutUsWindow.windowCreate();
@@ -381,14 +348,12 @@ window.onload = function(){
 		if(!document.getElementById("contactUs")){
 
 			let contactUsWindow = new NewWindow({
-									"width" : '',
-									"height": '',
 									"xPos": clientW/3,
 									"yPos": clientH/3,
 									"class": "standart-window contact-us-window",
 									"id": "contactUs",
 									"parentId": "contentContainer",
-									"objContent" : new HTMLContent
+									"objContent" : new PagesContent
 								 });
 
 			contactUsWindow.windowCreate();
@@ -399,8 +364,6 @@ window.onload = function(){
 		if(!document.getElementById("map")){
 
 			let mapWindow = new NewWindow({
-									"width" : "",
-									"height": "",
 									"xPos": 22,
 									"yPos": 20,
 									"class": "standart-window",
@@ -413,18 +376,32 @@ window.onload = function(){
 		}
 	}
 
+	document.getElementById("priceListBtn").onclick = function(){
+		if(!document.getElementById("priceList")){
+
+			let priceListWindow = new NewWindow({
+									"xPos": 22,
+									"yPos": 200,
+									"class": "standart-window",
+									"id": "priceList",
+									"parentId": "contentContainer",
+									"objContent" : new PagesContent
+								 });
+
+			priceListWindow.windowCreate();
+		}
+	}
+
 	document.getElementById("trustBtn").onclick = function(){
 		if(!document.getElementById("trust")){
 
 			let trustWindow = new NewWindow({
-									"width" : '',
-									"height": '',
 									"xPos": (clientW/2.5),
 									"yPos": 50,
 									"class": "standart-window trust-window",
 									"id": "trust",
 									"parentId": "contentContainer",
-									"objContent" : new HTMLContent
+									"objContent" : new PagesContent
 								 });
 
 			trustWindow.windowCreate();
@@ -435,8 +412,6 @@ window.onload = function(){
 		if(!document.getElementById("settings")){
 
 			let settingsWindow = new NewWindow({
-									"width" : '',
-									"height": '',
 									"xPos": (clientW/2.5),
 									"yPos": 50,
 									"class": "standart-window window-style-1 settings-window",
@@ -452,7 +427,7 @@ window.onload = function(){
 
 
 
-	// секция партиклов
+	// canvas
 	canvas.setAttribute("width", clientW);
 	canvas.setAttribute("height", clientH);
 
@@ -466,17 +441,19 @@ window.onload = function(){
 	particleMoves();
 
 
-	// отслиживаем координаты мыши при зажатии клавиши мыши. Мне впринципе такая функция не нужна, но я оставил ее как пример, как обнулять onmousemove при отпускании клавиши мыши
+	// отслиживаем координаты мыши при зажатии клавиши мыши.
 	canvas.onmousedown = function(event){
 		if(event.button == 0){
-			canvas.onmousemove = function(event){
-				mousex = event.offsetX;
-				mousey = event.offsetY;
+			document.body.onmousemove = function(event){
+				mousex = window.event.clientX;
+				mousey = window.event.clientY;
 			};
-			canvas.onmouseup = function(){
-				canvas.onmousemove = null;
+			document.body.onmouseup = function(){
+				document.body.onmousemove = null;
 			};
 		};
 	};
+
+
 
 }

@@ -1,4 +1,9 @@
 .btn{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+  
 	text-transform: uppercase;
 	font-family: "Arial Black", Gadget, sans-serif;
 	cursor: pointer;
@@ -44,4 +49,11 @@
 
 	font-family: "OfficinaSerifBookC";
 	text-align: justify;
+}
+
+.unselected{
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
