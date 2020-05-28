@@ -317,8 +317,8 @@ var canvas = document.getElementById("cvs"),
 	ctx = canvas.getContext("2d");
 
 // координаты мыши
-var mousex = 0,
-	mousey = 0;
+var mousex = -150,
+	mousey = -200;
 
 // массив партиклов;
 var particle = [];
