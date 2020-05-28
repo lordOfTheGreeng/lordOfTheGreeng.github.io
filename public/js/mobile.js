@@ -1,11 +1,6 @@
 class NewWindow{
 
 	constructor(settings){
-		this.xPos = settings.xPos,
-		this.yPos = settings.yPos,
-		this.focus = 0,
-		this.movementStartX = 0,
-		this.movementStartY = 0,
 
 		this.class = settings.class,
 		this.id = settings.id,
@@ -16,11 +11,9 @@ class NewWindow{
 
 	windowCreate(){
 		let objHTML = "<div class='" + this.class + "' id='" + this.id + "'></div>",
-			objMoveField = "<div class='window-move-field'></div>",
 			objCloserHTML = "<div class='standart-window-closer-block unselected'><p class='standart-window-closer'>X</p></div>";
 
 		document.getElementById(this.parentId).insertAdjacentHTML("beforeEnd", objHTML);
-		document.getElementById(this.id).insertAdjacentHTML("beforeEnd", objMoveField);
 		document.getElementById(this.id).insertAdjacentHTML("beforeEnd", objCloserHTML);
 
 		this.windowSettings();
@@ -28,13 +21,12 @@ class NewWindow{
 
 	windowSettings(){
 		let obj = document.querySelector("#" + this.id),
-			objMoveField = document.querySelector("#" + this.id + "> .window-move-field"),
 			objCloser = document.querySelector("#" + this.id + "> .standart-window-closer-block");
 
 		this.windowPosition(obj);
 		this.windowFocus(obj);
 		this.windowContent(obj);
-		this.windowFunctional(obj, objMoveField, objCloser);
+		this.windowFunctional(obj, objCloser);
 	}
 
 	windowPosition(obj){
@@ -51,40 +43,10 @@ class NewWindow{
 		this.objContent.contentCreation(this);
 	}
 
-	windowFunctional(obj, objMoveField, objCloser){
-		obj.addEventListener("mousedown", this.windowFocus.bind(this, obj));
-
-		objMoveField.addEventListener("mousedown", this.windowMovePermission.bind(this));
-		objMoveField.addEventListener("mouseup", this.windowMoveLock.bind(this));
-		objMoveField.addEventListener("mousemove", this.windowMove.bind(this, obj));
-
+	windowFunctional(obj, objCloser){
 		objCloser.addEventListener("click", this.windowClose.bind(obj));
 	}
 
-	windowMovePermission(){
-		this.focus = 1;
-		this.movementStartX = window.event.pageX - this.xPos;
-		this.movementStartY = window.event.pageY - this.yPos;
-	}
-
-	windowMoveLock(){
-		this.focus = 0;
-	}
-
-	windowMove(obj){
-		if(this.focus == 1){
-			let x = window.event.clientX,
-				y = window.event.clientY;
-
-				x -= this.movementStartX;
-				y -= this.movementStartY;
-
-			this.xPos = x;
-			this.yPos = y;
-
-			this.windowPosition(obj);
-		}
-	}
 
 	windowClose(){
 		this.remove();
@@ -317,8 +279,8 @@ var canvas = document.getElementById("cvs"),
 	ctx = canvas.getContext("2d");
 
 // координаты мыши
-var mousex = 0,
-	mousey = 0;
+var mousex = -100,
+	mousey = -150;
 
 // массив партиклов;
 var particle = [];
@@ -441,20 +403,6 @@ window.onload = function(){
 
 	// включаем функцию
 	particleMoves();
-
-
-	// отслиживаем координаты мыши при зажатии клавиши мыши.
-	canvas.onmousedown = function(event){
-		if(event.button == 0){
-			document.body.onmousemove = function(event){
-				mousex = window.event.clientX;
-				mousey = window.event.clientY;
-			};
-			document.body.onmouseup = function(){
-				document.body.onmousemove = null;
-			};
-		};
-	};
 
 
 

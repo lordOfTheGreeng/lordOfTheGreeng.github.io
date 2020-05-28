@@ -268,6 +268,12 @@ width: 5px;
 	padding: 0 10px;
 	list-style-type: none;
 }
+	.price-list-category-wrapper li:first-child{
+		border-bottom: 1px solid var(--second-color);
+	}
+	.price-list-category-wrapper li:first-child h3{
+		font-size: 30px;
+	}
 /*price list spawned pages*/
 .price-list-category-wrapper li{
 	margin-bottom: 20px;
@@ -279,9 +285,6 @@ width: 5px;
 .price-list-category-wrapper h3{
 	margin-right: 10px;
 }
-	.price-list-category-wrapper li:first-child h3{
-		font-size: 30px;
-	}
 
 .trust-window{
 	width: 30vw;

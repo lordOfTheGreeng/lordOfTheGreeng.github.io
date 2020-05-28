@@ -54,27 +54,33 @@ class NewWindow{
 	windowFunctional(obj, objMoveField, objCloser){
 		obj.addEventListener("mousedown", this.windowFocus.bind(this, obj));
 
-		objMoveField.addEventListener("mousedown", this.windowMovePermission.bind(this));
+		objMoveField.ondragstart = () => false;
+		objMoveField.addEventListener("mousedown", this.windowMovePermission.bind(this, obj));
 		objMoveField.addEventListener("mouseup", this.windowMoveLock.bind(this));
-		objMoveField.addEventListener("mousemove", this.windowMove.bind(this, obj));
 
 		objCloser.addEventListener("click", this.windowClose.bind(obj));
 	}
 
-	windowMovePermission(){
+	windowMovePermission(obj){
 		this.focus = 1;
-		this.movementStartX = window.event.pageX - this.xPos;
-		this.movementStartY = window.event.pageY - this.yPos;
+		this.movementStartX = event.clientX - this.xPos;
+		this.movementStartY = event.clientY - this.yPos;
+
+		document.addEventListener("mousemove", this.windowMove.bind(this, obj));
 	}
 
 	windowMoveLock(){
 		this.focus = 0;
+		document.onmousemove = null;
 	}
 
 	windowMove(obj){
 		if(this.focus == 1){
-			let x = window.event.clientX,
-				y = window.event.clientY;
+
+			let x = event.clientX,
+				y = event.clientY;
+
+				console.log(x,y);
 
 				x -= this.movementStartX;
 				y -= this.movementStartY;
@@ -380,9 +386,9 @@ window.onload = function(){
 		if(!document.getElementById("priceList")){
 
 			let priceListWindow = new NewWindow({
-									"xPos": 22,
-									"yPos": 200,
-									"class": "standart-window",
+									"xPos": 50,
+									"yPos": 100,
+									"class": "standart-window window-style-1",
 									"id": "priceList",
 									"parentId": "contentContainer",
 									"objContent" : new PagesContent
@@ -445,8 +451,8 @@ window.onload = function(){
 	canvas.onmousedown = function(event){
 		if(event.button == 0){
 			document.body.onmousemove = function(event){
-				mousex = window.event.clientX;
-				mousey = window.event.clientY;
+				mousex = event.clientX;
+				mousey = event.clientY;
 			};
 			document.body.onmouseup = function(){
 				document.body.onmousemove = null;
