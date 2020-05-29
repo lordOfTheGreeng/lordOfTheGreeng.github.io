@@ -2,7 +2,7 @@
 	--main-color: #10131d;
 	--second-color: rgb(153, 64, 51);
 	--third-color: rgb(210, 210, 210); 
-	--main-font-family: "Arial Black", Gadget, sans-serif;;
+	--main-font-family: "geo-nms";
 	--second-font-family: "OfficinaSerifBookC";
 	--third-font-family: "Palatino Linotype Italic";
 }
@@ -159,7 +159,7 @@ img{
 		margin-bottom: 0;
 		color: rgba(255,255,255, .7);
 
-		font-family: var(--main-font-family);
+		font-family: "Arial Black";
 	}
 
 

@@ -14,7 +14,7 @@
 
 @font-face {
 	font-family: "geo-nms";
-	src: url("../fonts/geo-nms/geonms-font.ttf") format("truetype");
+	src: url("../fonts/geo-nms/geonms-font.otf") format("opentype");
 	font-style: normal;
 	font-weight: normal;
 }
