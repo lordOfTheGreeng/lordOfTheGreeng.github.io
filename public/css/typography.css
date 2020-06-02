@@ -14,12 +14,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: var(--main-color);
 	background: var(--second-color);
 	width: 230px;
 	height: 50px;
 }
 	.btn-style-1:hover{
 		background: var(--third-color);
+		border-color: var(--third-color);
 	}
 .btn-style-2{
 	display: flex;

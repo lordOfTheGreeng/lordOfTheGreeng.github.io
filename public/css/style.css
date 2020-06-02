@@ -132,11 +132,13 @@ img{
 		left: 0;
 		width: 100%;
 		height: 30px;
-		background: rgba(255,255,255,.04);
+		background: var(--third-color);
+		opacity: .06;
 	}
 	/*closer*/
 	.standart-window-closer-block{
-		background: rgba(255,255,255, .1);
+		background: var(--third-color);
+		opacity: .3;
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
@@ -152,12 +154,13 @@ img{
 		cursor: pointer;
 	}
 		.standart-window-closer-block:hover{
-			background: rgba(255,255,255, .3);
+			opacity: .7;
 		}
 	.standart-window-closer-block .standart-window-closer{
+		margin-top: -1px;
 		font-size: 16px;
 		margin-bottom: 0;
-		color: rgba(255,255,255, .7);
+		color: var(--main-color);
 
 		font-family: "Arial Black";
 	}
@@ -213,9 +216,6 @@ width: 5px;
 		position: relative;
 		width: 40%;
 		margin-right: 20px;
-	}
-	.workers-wrapper .harry-potter-img{
-		width: 30%;
 	}
 		.workers-wrapper .worker-page-img::after{
 			content: "";
