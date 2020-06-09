@@ -230,12 +230,12 @@ class SettingsContent extends HTMLContent{
 class Particles{
 
 	constructor(){
-		this.color = "rgb(153, 64, 51)";
+		this.color = "rgb(0, 255, 170)";
 		this.width = Math.floor(Math.random() * (4 - 1) + 1);
 		this.height = Math.floor(Math.random() * (4 - 1) + 1);
 
-		this.xPos = Math.floor(Math.random() * (clientW - 1) + 1);
-		this.yPos = Math.floor(Math.random() * (clientH - 1) + 1);
+		this.xPos = Math.floor(Math.random() * ((cvsW) - 1) + 1);
+		this.yPos = Math.floor(Math.random() * ((cvsH) - 1) + 1);
 		this.speed = Math.floor(Math.random() * (3 - 1) + 1);
 	}
 
@@ -248,7 +248,7 @@ class Particles{
 		ctx.beginPath();
 		ctx.moveTo(startX, startY);
 		ctx.lineTo(this.xPos,this.yPos);
-		ctx.lineWidth = .1;
+		ctx.lineWidth = .02;
 		ctx.strokeStyle = this.color;
 		ctx.stroke();
 		ctx.closePath();
@@ -269,7 +269,7 @@ var particleMoves = function(){
 
 		setTimeout(function(){
 
-			ctx.clearRect(0,0, clientW,clientH);
+			ctx.clearRect(0,0, cvsW,cvsH);
 
 			for(var i = 0; i<dotsCount; i++){
 
@@ -291,8 +291,8 @@ var particleMoves = function(){
 				};
 
 				// легкая функция ограничивающая выход за canvas
-				if(x>clientW) x=0;
-				if(y>clientH) y=0;
+				if(x>cvsW) x=0;
+				if(y>cvsH) y=0;
 
 				particle[i].particleDirection(x,y);
 				particle[i].particleSpawn();
@@ -302,7 +302,7 @@ var particleMoves = function(){
 			particleMoves();
 		}, 20);
 	} else{
-		ctx.clearRect(0,0, clientW,clientH);
+		ctx.clearRect(0,0, cvsW,cvsH);
 	}
 };
 
@@ -319,6 +319,8 @@ var index = 2,
 // подключение canvas
 var canvas = document.getElementById("cvs"),
 	ctx = canvas.getContext("2d");
+	cvsW = clientW * 2;
+	cvsH = clientH * 2;
 
 // координаты мыши
 var mousex = 0,
@@ -327,7 +329,7 @@ var mousex = 0,
 // массив партиклов;
 var particle = [];
 var particleOn = true;
-const dotsCount = 200;
+const dotsCount = 1000;
 
 
 
@@ -434,8 +436,8 @@ window.onload = function(){
 
 
 	// canvas
-	canvas.setAttribute("width", clientW);
-	canvas.setAttribute("height", clientH);
+	canvas.setAttribute("width", cvsW);
+	canvas.setAttribute("height", cvsH);
 
 	// заполняем массив объектами
 	for(var i = 0; i<dotsCount; i++){
@@ -450,13 +452,15 @@ window.onload = function(){
 	// отслиживаем координаты мыши при зажатии клавиши мыши.
 	canvas.onmousedown = function(event){
 		if(event.button == 0){
-			document.body.onmousemove = function(event){
-				mousex = event.clientX;
-				mousey = event.clientY;
-			};
-			document.body.onmouseup = function(){
-				document.body.onmousemove = null;
-			};
+			if(particleOn === true){
+				document.body.onmousemove = function(event){
+					mousex = event.clientX * 2;
+					mousey = event.clientY * 2;
+				};
+				document.body.onmouseup = function(){
+					document.body.onmousemove = null;
+				};
+			}
 		};
 	};
 
