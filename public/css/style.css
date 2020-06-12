@@ -191,6 +191,7 @@ width: 5px;
 .about-us-window{
 	width: 40vw;
 }
+
 .contact-us-window .worker-info{
 	display: flex;
 	justify-content: space-between;
@@ -294,7 +295,6 @@ width: 5px;
 	.trust-block{
 		background: rgba(0, 0, 0, .3);
 		height: inherit;
-		overflow: auto;
 	}
 		.trust-img{ 
 			position: relative;
@@ -398,6 +398,19 @@ width: 5px;
 			background: rgba(255,255,255, .4);
 		}
 
+	.contact-us-window .worker-info{
+		display: flex;
+		flex-flow: wrap column;
+		align-items: center;
+
+		margin-bottom: 20px;
+	}
+		.contact-us-window .worker-info span{
+			text-align: center;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
 
 	.workers-wrapper {
 		display: block;
@@ -406,5 +419,21 @@ width: 5px;
 	#mapContainer{
 		width: 100vw;
 		height: 100vh;
+	}
+
+	.price-list-category-wrapper li{
+		margin-bottom: 20px;
+		display: block;
+	}
+	.price-list-category-wrapper h3, .price-list-category-wrapper p{
+		margin-bottom: 0;
+	}
+	.price-list-category-wrapper h3{
+		margin-right: 10px;
+	}
+
+	.trust-img{ 
+		display: block;
+		margin-bottom: 5px;
 	}
 }
